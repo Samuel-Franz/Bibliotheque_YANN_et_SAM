@@ -1,0 +1,127 @@
+LIVRE
+Berserk
+Kentaro Miura
+31
+10
+1989
+1
+Samuel Franz
+10
+5
+2018
+10
+5
+2050
+10000
+Hakusensha
+Dans un monde m�di�val et fantastique, erre un guerrier solitaire nomm� Guts, d�cid� � �tre seul ma�tre de son destin. Autrefois contraint par un pari perdu � rejoindre les Faucons, une troupe de mercenaires dirig�s par Griffith, Guts fut acteur de nombreux combats sanglants et t�moin de sombres intrigues politiques. Mais il r�alisa soudain que la fatalit� n'existe pas et qu'il pouvait reprendre sa libert� s'il le d�sirait vraiment..
+
+REVUE
+L'intelligence artificielle
+01net
+29
+04
+2018
+2
+Yann Divet
+1
+5
+2018
+10
+5
+2018
+40
+Kiosque01
+Qu'elle est la place de l'intelligence artificielle dans la soci�t� aujourd'hui?
+Editeur01net
+6
+article1, article2, article 3, article 4, article 5, article 6
+
+CD
+The Razors Edge
+ACDC
+1
+1
+1990
+3
+
+0
+0
+0
+0
+0
+0
+47
+12
+Atco Records
+
+VHS
+Shrek
+Auteur de shrek
+2
+7
+2001
+4
+
+0
+0
+0
+0
+0
+0
+120
+ShrekProd
+
+DVD
+Un Dvd
+Un auteur de DVD
+6
+7
+1970
+5
+MR Dupont
+5
+3
+2016
+4
+3
+2017
+120
+maison de prod du dvd
+5
+
+RESSOURCE_NUMERIQUE
+exemple
+Sam
+1
+1
+2016
+6
+
+0
+0
+0
+0
+0
+0
+1500
+chemin d'acces
+pdf
+
+LIVRE
+livre 2
+auteur livre 2
+1
+2
+1789
+7
+Samuel Franz
+10
+5
+2018
+10
+5
+2000
+5000
+revolution
+les nobles se font couper la tete c'est genial

@@ -1,0 +1,136 @@
+/*void LoadMediatheque2(const char* Lnomfichier, vector<Clivre*> &Llivres, vector<Crevue*> &Lrevues, vector<Ccd*> &Lcds, vector<Cdvd*> &Ldvds, vector<Cvhs*> &Lvhs,
+                      vector<Cressource_numerique*> &Lressources_numeriques){
+    string buff;
+    ifstream fichier(Lnomfichier, ios::in);
+    if (fichier){
+        cout<<"fichier ouvert"<<endl;
+        while(!fichier.eof()){
+            getline(fichier,buff);
+            if (buff.compare("LIVRE") == 0){
+                //cout<<"ajout d'un livre"<<endl;
+                //Clivre *livretmp = new Clivre(fichier,buff);
+                Clivre *livretmp = new Clivre(fichier,buff);
+                Llivres.push_back(livretmp);
+                livretmp->affichage();
+            }
+            if (buff.compare("REVUE") == 0){
+                //cout<<"ajout d'une revue"<<endl;
+                Crevue *revuetmp = new Crevue(fichier,buff);
+                Lrevues.push_back(revuetmp);
+            }
+            if (buff.compare("VHS")   == 0){
+                //cout<<"ajout d'une vhs"<<endl;
+                Cvhs *vhstmp = new Cvhs(fichier,buff);
+                Lvhs.push_back(vhstmp);
+            }
+            if (buff.compare("DVD")   == 0){
+                //cout<<"ajout d'un DVD"<<endl;
+                Cdvd *dvdtmp = new Cdvd(fichier,buff);
+                Ldvds.push_back(dvdtmp);
+            }
+            if (buff.compare("CD")    == 0){
+                //cout<<"ajout d'un CD"<<endl;
+                Ccd *cdtmp = new Ccd(fichier,buff);
+                Lcds.push_back(cdtmp);
+            }
+            if (buff.compare("RESSOURCE_NUMERIQUE") == 0){
+                //cout<<"ajout d'une ressource numerique"<<endl;
+                Cressource_numerique *numtmp = new Cressource_numerique(fichier,buff);
+                Lressources_numeriques.push_back(numtmp);
+            }
+        }
+        fichier.close();
+        cout<<"chargement termine"<<endl;
+    }
+    else
+        cerr << "Impossible d'ouvrir le fichier !" << endl;
+}
+*/
+/*
+void LoadMediatheque3(const char* Lnomfichier, vector<Clivre*> &Llivres, vector<Crevue*> &Lrevues, vector<Ccd*> &Lcds, vector<Cdvd*> &Ldvds, vector<Cvhs*> &Lvhs,
+                      vector<Cressource_numerique*> &Lressources_numeriques){
+    string buff;
+    string titre;
+    string auteur;
+    date date_de_sortie;
+    periode periode_emprunt;
+    int ID = 0;
+    string locataire;
+    int nbr_pages = 0;
+    string collection;
+    string resume;
+    ifstream fichier(Lnomfichier, ios::in);
+    if (fichier){
+        cout<<"fichier ouvert"<<endl;
+        while(!fichier.eof()){
+            getline(fichier,buff);
+            if (buff == "LIVRE"){
+                getline(fichier, buff);
+                titre = buff;
+                getline(fichier, buff);
+                //cout << _titre << endl;
+                auteur = buff;
+
+                //récupération de la date de sortie
+                getline(fichier, buff);
+                date_de_sortie.jour = stoi(buff);
+                getline(fichier, buff);
+                date_de_sortie.mois = stoi(buff);
+                getline(fichier, buff);
+                date_de_sortie.annee = stoi(buff);
+
+
+                getline(fichier, buff);
+                ID = stoi(buff);
+                //cout << _ID << endl;
+                getline(fichier, buff);
+                locataire = buff;
+                //cout << _locataire << endl;
+
+                //récupération de la période d'emprunt
+                getline(fichier, buff);
+                periode_emprunt.debut.jour = stoi(buff);
+                getline(fichier, buff);
+                periode_emprunt.debut.mois = stoi(buff);
+                getline(fichier, buff);
+                periode_emprunt.debut.annee = stoi(buff);
+                getline(fichier, buff);
+                periode_emprunt.fin.jour = stoi(buff);
+                getline(fichier, buff);
+                periode_emprunt.fin.mois = stoi(buff);
+                getline(fichier, buff);
+                periode_emprunt.fin.annee = stoi(buff);
+
+                getline(fichier, buff);
+                nbr_pages = stoi(buff);
+                getline(fichier, buff);
+                collection = buff;
+                getline(fichier, buff);
+                resume = buff;
+                Clivre *tmp = new Clivre(titre, auteur, date_de_sortie,ID,
+                                    nbr_pages, collection, resume);
+                tmp->affichage();
+                Llivres.push_back(tmp);*/
+         /*   }
+            if (buff == "REVUE"){
+
+            }
+            if (buff == "VHS"){
+
+            }
+            if (buff == "DVD"){
+
+            }
+            if (buff == "CD"){
+
+            }
+            if (buff == "RESSOURCE_NUMERIQUE"){
+
+            }
+        }
+        fichier.close();
+        cout<<"chargement termine"<<endl;
+    }
+    else
+        cerr << "Impossible d'ouvrir le fichier !" << endl;
+}*/
