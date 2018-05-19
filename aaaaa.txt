@@ -1,4 +1,4 @@
-LIVRE
+﻿LIVRE
 Berserk
 Kentaro Miura
 Berserk
@@ -16,25 +16,6 @@ Samuel Franz
 10000
 Hakusensha
 Dans un monde m�di�val et fantastique, erre un guerrier solitaire nomm� Guts, d�cid� � �tre seul ma�tre de son destin. Autrefois contraint par un pari perdu � rejoindre les Faucons, une troupe de mercenaires dirig�s par Griffith, Guts fut acteur de nombreux combats sanglants et t�moin de sombres intrigues politiques. Mais il r�alisa soudain que la fatalit� n'existe pas et qu'il pouvait reprendre sa libert� s'il le d�sirait vraiment..
-
-LIVRE
-livre 2
-auteur livre 2
-livre 2
-1
-2
-1789
-7
-Samuel Franz
-10
-5
-2018
-10
-5
-2000
-5000
-revolution
-les nobles se font couper la tete c'est genial
 
 Revue
 L'intelligence artificielle
@@ -132,5 +113,5 @@ exemple
 chemin d'acces
 pdf
 
-12345
-117
+ID_DISPO
+8

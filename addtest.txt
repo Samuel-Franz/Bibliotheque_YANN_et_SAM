@@ -1,6 +1,7 @@
 LIVRE
 Berserk
 Kentaro Miura
+Berserk
 31
 10
 1989
@@ -16,11 +17,31 @@ Samuel Franz
 Hakusensha
 Dans un monde m�di�val et fantastique, erre un guerrier solitaire nomm� Guts, d�cid� � �tre seul ma�tre de son destin. Autrefois contraint par un pari perdu � rejoindre les Faucons, une troupe de mercenaires dirig�s par Griffith, Guts fut acteur de nombreux combats sanglants et t�moin de sombres intrigues politiques. Mais il r�alisa soudain que la fatalit� n'existe pas et qu'il pouvait reprendre sa libert� s'il le d�sirait vraiment..
 
-REVUE
+LIVRE
+livre 2
+auteur livre 2
+livre 2
+1
+2
+1789
+7
+Samuel Franz
+10
+5
+2018
+10
+5
+2000
+5000
+revolution
+les nobles se font couper la tete c'est genial
+
+Revue
 L'intelligence artificielle
 01net
+L'intelligence artificielle
 29
-04
+4
 2018
 2
 Yann Divet
@@ -40,11 +61,11 @@ article1, article2, article 3, article 4, article 5, article 6
 CD
 The Razors Edge
 ACDC
+The Razors Edge
 1
 1
 1990
 3
-
 0
 0
 0
@@ -55,26 +76,28 @@ ACDC
 12
 Atco Records
 
-VHS
-Shrek
-Auteur de shrek
+CD
+test
+test
+test
 2
-7
-2001
+3
+1999
+8
+0
+0
+0
+0
+0
+0
+30
 4
-
-0
-0
-0
-0
-0
-0
-120
-ShrekProd
+Lamaisondeprod
 
 DVD
 Un Dvd
 Un auteur de DVD
+Un Dvd
 6
 7
 1970
@@ -90,9 +113,28 @@ MR Dupont
 maison de prod du dvd
 5
 
+VHS
+Shrek
+Auteur de shrek
+Shrek
+2
+7
+2001
+4
+
+0
+0
+0
+0
+0
+0
+120
+ShrekProd
+
 RESSOURCE_NUMERIQUE
 exemple
 Sam
+exemple
 1
 1
 2016
@@ -108,23 +150,6 @@ Sam
 chemin d'acces
 pdf
 
-LIVRE
-livre 2
-auteur livre 2
-1
-2
-1789
-7
-Samuel Franz
-10
-5
-2018
-10
-5
-2000
-5000
-revolution
-les nobles se font couper la tete c'est genial
-
-ID_DISPO
+ID_DISPO 
 8
+9

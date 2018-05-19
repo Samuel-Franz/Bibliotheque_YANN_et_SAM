@@ -14,8 +14,8 @@ using namespace std;
 
 //Constructeurs
 
-Cressource::Cressource(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier,Lbuff);
+Cressource::Cressource(ifstream& Lfichier, string Lbuff,vector<int> &Lids){
+    from_file(Lfichier,Lbuff, Lids);
 }
 
 Cressource::Cressource(string titre,string auteur,date date_de_sortie,int ID){
@@ -126,7 +126,7 @@ void Cressource::remise() {
     _periode_emprunt.fin.annee   = 0;
 }
 
-void Cressource::from_file(ifstream& Lfichier, string Lbuff){
+void Cressource::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
     //cout << "entree dans la fonction from file de Cressource" << endl;
     getline(Lfichier, Lbuff);
     _titre = Lbuff;
@@ -144,6 +144,7 @@ void Cressource::from_file(ifstream& Lfichier, string Lbuff){
 
     getline(Lfichier, Lbuff);
     _ID = stoi(Lbuff);
+    Lids.push_back(_ID);
     //cout << _ID << endl;
     getline(Lfichier, Lbuff);
     _locataire = Lbuff;
@@ -168,8 +169,8 @@ void Cressource::from_file(ifstream& Lfichier, string Lbuff){
 //*********************************Clivre*********************************//
 
 //Constructeur
-Clivre::Clivre(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier,Lbuff);
+Clivre::Clivre(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier,Lbuff, Lids);
 }
 
 Clivre::Clivre(){
@@ -225,8 +226,8 @@ string Clivre::get_resume(){
     return _resume;
 }
 
-void Clivre::from_file(ifstream& Lfichier, string Lbuff) {
-    Cressource::from_file(Lfichier, Lbuff);
+void Clivre::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Cressource::from_file(Lfichier, Lbuff, Lids);
     //infos livre
     _type = LIVRE;
     getline(Lfichier, Lbuff);
@@ -247,8 +248,8 @@ Crevue::Crevue(){
 
 }
 
-Crevue::Crevue(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier, Lbuff);
+Crevue::Crevue(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier, Lbuff, Lids);
 }
 
 Crevue::Crevue(string titre,string auteur,date date_de_sortie,int ID,int nbr_page,
@@ -303,8 +304,8 @@ string Crevue::get_nom_articles(){
     return _nom_articles;
 }
 
-void Crevue::from_file(ifstream& Lfichier, string Lbuff) {
-    Clivre::from_file(Lfichier, Lbuff);
+void Crevue::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Clivre::from_file(Lfichier, Lbuff, Lids);
     //infos revue
     _type = REVUE;
     getline(Lfichier, Lbuff);
@@ -322,8 +323,8 @@ Ccd::Ccd(){
 
 }
 
-Ccd::Ccd(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier, Lbuff);
+Ccd::Ccd(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier, Lbuff, Lids);
 }
 
 Ccd::Ccd(string titre, string auteur, date date_de_sortie, int ID, int duree, int nbr_pistes,
@@ -372,8 +373,8 @@ int Ccd::get_nbr_pistes(){
     return _nbr_pistes;
 }
 
-void Ccd::from_file(ifstream& Lfichier, string Lbuff) {
-    Cressource::from_file(Lfichier, Lbuff);
+void Ccd::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Cressource::from_file(Lfichier, Lbuff, Lids);
 
     //infos CD
     _type = CD;
@@ -396,8 +397,8 @@ Cvhs::Cvhs(){
 
 }
 
-Cvhs::Cvhs(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier, Lbuff);
+Cvhs::Cvhs(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier, Lbuff, Lids);
 }
 
 Cvhs::Cvhs(string titre,string auteur,date date_de_sortie,int ID, int duree, string maison_de_production){
@@ -439,8 +440,8 @@ string Cvhs::get_maison_de_producton(){
     return _maison_de_production;
 }
 
-void Cvhs::from_file(ifstream& Lfichier, string Lbuff) {
-    Cressource::from_file(Lfichier, Lbuff);
+void Cvhs::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Cressource::from_file(Lfichier, Lbuff, Lids);
     //infos VHS
     _type = VHS;
     getline(Lfichier, Lbuff);
@@ -457,8 +458,8 @@ Cdvd::Cdvd(){
 
 }
 
-Cdvd::Cdvd(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier, Lbuff);
+Cdvd::Cdvd(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier, Lbuff, Lids);
 }
 
 Cdvd::Cdvd(string titre,string auteur,date date_de_sortie,int ID, int duree, string maison_de_production,
@@ -508,8 +509,8 @@ int Cdvd::get_nbr_chapitres(){
     return _nbr_chapitres;
 }
 
-void Cdvd::from_file(ifstream& Lfichier, string Lbuff) {
-    Cressource::from_file(Lfichier,Lbuff);
+void Cdvd::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Cressource::from_file(Lfichier,Lbuff, Lids);
     //infos DVD
     _type = DVD;
     getline(Lfichier, Lbuff);
@@ -527,8 +528,8 @@ Cressource_numerique::Cressource_numerique(){
 
 }
 
-Cressource_numerique::Cressource_numerique(ifstream& Lfichier, string Lbuff){
-    from_file(Lfichier, Lbuff);
+Cressource_numerique::Cressource_numerique(ifstream& Lfichier, string Lbuff, vector<int> &Lids){
+    from_file(Lfichier, Lbuff, Lids);
 }
 
 Cressource_numerique::Cressource_numerique(string titre,string auteur,date date_de_sortie,int ID, int taille, string chemin_acces, string format){
@@ -577,8 +578,8 @@ string Cressource_numerique::get_format(){
     return _format;
 }
 
-void Cressource_numerique::from_file(ifstream& Lfichier, string Lbuff) {
-    Cressource::from_file(Lfichier,Lbuff);
+void Cressource_numerique::from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids) {
+    Cressource::from_file(Lfichier,Lbuff, Lids);
 
     //Infos ressource num
     _type = RESSOURCE_NUMERIQUE;
@@ -593,7 +594,7 @@ void Cressource_numerique::from_file(ifstream& Lfichier, string Lbuff) {
 
 //AUTRES FONCTIONS
 
-void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque,vector<int> &Lids_dispo){
+void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids, vector<int> &Lids_dispo){
     string buff;
     ifstream fichier(Lnomfichier, ios::in);
     if (fichier){
@@ -602,43 +603,41 @@ void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque,vector<int> &Lids_
             getline(fichier,buff);
             if (buff.compare("LIVRE") == 0){
                 //cout<<"ajout d'un livre"<<endl;
-                Clivre *livretmp = new Clivre(fichier,buff);
+                Clivre *livretmp = new Clivre(fichier,buff,Lids);
                 Lmediatheque.livres.push_back(livretmp);
                 //livretmp->affichage();
             }
             if (buff.compare("REVUE") == 0){
                 //cout<<"ajout d'une revue"<<endl;
-                Crevue *revuetmp = new Crevue(fichier,buff);
+                Crevue *revuetmp = new Crevue(fichier,buff,Lids);
                 Lmediatheque.revues.push_back(revuetmp);
             }
             if (buff.compare("VHS")   == 0){
                 //cout<<"ajout d'une vhs"<<endl;
-                Cvhs *vhstmp = new Cvhs(fichier,buff);
+                Cvhs *vhstmp = new Cvhs(fichier,buff,Lids);
                 Lmediatheque.vhs.push_back(vhstmp);
             }
             if (buff.compare("DVD")   == 0){
                 //cout<<"ajout d'un DVD"<<endl;
-                Cdvd *dvdtmp = new Cdvd(fichier,buff);
+                Cdvd *dvdtmp = new Cdvd(fichier,buff,Lids);
                 Lmediatheque.dvds.push_back(dvdtmp);
             }
             if (buff.compare("CD")    == 0){
                 //cout<<"ajout d'un CD"<<endl;
-                Ccd *cdtmp = new Ccd(fichier,buff);
+                Ccd *cdtmp = new Ccd(fichier,buff,Lids);
                 Lmediatheque.cds.push_back(cdtmp);
             }
             if (buff.compare("RESSOURCE_NUMERIQUE") == 0){
                 //cout<<"ajout d'une ressource numerique"<<endl;
-                Cressource_numerique *numtmp = new Cressource_numerique(fichier,buff);
+                Cressource_numerique *numtmp = new Cressource_numerique(fichier,buff,Lids);
                 Lmediatheque.ressources_numeriques.push_back(numtmp);
             }
-            if (buff.compare("ID_DISPO") == 0){
+            /*if (buff.compare("ID_DISPO")){
                 int Buff;
-                while(!fichier.eof()){
-                    getline(fichier,buff);
-                    Buff = stoi(buff);
+                while(fichier >> Buff){
                     Lids_dispo.push_back(Buff);
                 }
-            }
+            }*/
         }
         fichier.close();
         cout<<"chargement termine"<<endl;
@@ -788,22 +787,20 @@ void SAVE(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids
         cerr << "Impossible d'ouvrir le fichier de sauvegarde!" << endl;
 }
 
-void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
+void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids, vector<int> &Lids_dispo){
     string titre;
     string auteur;
     date   date_de_sortie;
     int    ID;
     string type;
     string locataire;
-    cout << "Quel type de ressource voulez vous ajouter ? : " << endl;
+    periode periode_emprunt;
+    cout << "Quel type de ressource voulez vous ajouter ? : \n" << endl;
     cin >> type;
-    cout << "Titre ? :" << endl;
-    fflush(stdin);
-    getline(cin,titre);
-    cout << "("<<titre<<")" <<endl;
-    cout << "Auteur ? : " << endl;
-    fflush(stdin);
-    getline(cin,auteur);
+    cout << "Titre ? : \n" << endl;
+    cin >> titre;
+    cout << "Auteur ? : \n" << endl;
+    cin >> auteur;
     cout << "Jour de sortie ? : \n" << endl;
     cin >> date_de_sortie.jour;
     cout << "Mois de sortie ? : \n" << endl;
@@ -811,8 +808,7 @@ void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
     cout << "Annee de sortie ? : \n" << endl;
     cin >> date_de_sortie.annee;
     cout << "Locataire ? : \n" << endl;
-    fflush(stdin);
-    getline(cin,locataire);
+    cin >> locataire;
     /*cout << "Jour d'emprunt ? : \n" << endl;
     cin >> periode_emprunt.debut.jour;
     cout << "Mois d'emprunt ? : \n" << endl;
@@ -826,15 +822,12 @@ void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
     cout << "Annee de remise ? : \n" << endl;
     cin >> periode_emprunt.fin.annee;*/
 
-    if(Lids_dispo.size()>1){
-        vector<int>::iterator it = Lids_dispo.end();
-        ID = (*it);
-        Lids_dispo.pop_back();
+    if(!Lids_dispo.empty()){
+        ID = *min_element(Lids_dispo.begin(),Lids_dispo.end());
     }
     else{
-        Lids_dispo.push_back(Lids_dispo[0]+1);
-        ID = Lids_dispo[0];
-        Lids_dispo.erase(Lids_dispo.begin());
+        cout << "Identifiant ? : \n" << endl;
+        cin >> ID;
     }
 
     if (type == "LIVRE"){
@@ -844,11 +837,9 @@ void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
         cout << "Nombre de pages ? : \n" << endl;
         cin >> nbr_pages;
         cout << "Collection ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,collection);
+        cin >> collection;
         cout << "Resume ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,resume);
+        cin >> resume;
         Clivre *livretmp = new Clivre(titre,auteur,date_de_sortie,ID,nbr_pages,collection,resume);
         Lmediatheque.livres.push_back(livretmp);
     }
@@ -862,22 +853,18 @@ void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
         cout << "Nombre de pages ? : \n" << endl;
         cin >> nbr_pages;
         cout << "Collection ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,collection);
+        cin >> collection;
         cout << "Resume ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,resume);
+        cin >> resume;
         cout << "Editeur ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,editeur);
+        cin >> editeur;
         cout << "Nombre d'articles ? : \n" << endl;
         cin >> nbr_articles;
         cout << "Noms des articles ? ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,nom_articles);
-        Crevue *revuetmp = new Crevue(titre, auteur, date_de_sortie, ID, nbr_pages, collection, resume, editeur,
+        cin >> nom_articles;
+        Crevue *livretmp = new Crevue(titre, auteur, date_de_sortie, ID, nbr_pages, collection, resume, editeur,
                                       nbr_articles, nom_articles);
-        Lmediatheque.revues.push_back(revuetmp);
+        Lmediatheque.revues.push_back(livretmp);
     }
     if (type == "CD") {
         int duree;
@@ -888,138 +875,9 @@ void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo){
         cout << "Nombre de pistes ? : \n" << endl;
         cin >> nbr_pistes;
         cout << "Maison de production ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,maison_de_production);
-        Ccd *cdtmp = new Ccd(titre, auteur, date_de_sortie, ID,duree,nbr_pistes,maison_de_production);
-        Lmediatheque.cds.push_back(cdtmp);
+        cin >> maison_de_production;
+        Ccd *livretmp = new Ccd(titre, auteur, date_de_sortie, ID,duree,nbr_pistes,);
+        Lmediatheque.cds.push_back(livretmp);
     }
-    if (type == "DVD") {
-        int duree;
-        string maison_de_production;
-        int nbr_chapitre;
-        cout << "Duree ? : \n" << endl;
-        cin >> duree;
-        cout << "Maison de production ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,maison_de_production);
-        cout << "Nombre de chapitres ? : \n" << endl;
-        cin >> nbr_chapitre;
-        Cdvd *dvdtmp = new Cdvd(titre, auteur, date_de_sortie, ID,duree,maison_de_production,nbr_chapitre);
-        Lmediatheque.dvds.push_back(dvdtmp);
-    }
-    if (type == "VHS") {
-        int duree;
-        string maison_de_production;
-        cout << "Duree ? : \n" << endl;
-        cin >> duree;
-        cout << "Maison de production ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,maison_de_production);
-        Cvhs *vhstmp = new Cvhs(titre, auteur, date_de_sortie, ID,duree,maison_de_production);
-        Lmediatheque.vhs.push_back(vhstmp);
-    }
-    if (type == "RESSOURCE_NUMERIQUE") {
-        int taille;
-        string chemin_acces;
-        string format;
-        cout << "Taille ? : \n" << endl;
-        cin >> taille;
-        cout << "Chemin d'acces ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,chemin_acces);
-        cout << "Format ? : \n" << endl;
-        fflush(stdin);
-        getline(cin,format);
-        Cressource_numerique *vhstmp = new Cressource_numerique(titre, auteur, date_de_sortie, ID,taille,chemin_acces,format);
-        Lmediatheque.ressources_numeriques.push_back(vhstmp);
-    }
-}
-
-void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo) {
-
-    int id_trouve = 0;
-    //test sur les livres
-    vector<Clivre*>::iterator it_livre = Lmediatheque.livres.begin();
-    cout << "vecteur it-livre créé" << endl;
-    while ((id_trouve == 0)) {
-        cout <<"on est dans le while de livre" << endl;
-        if ((*it_livre)->get_ID() == ID) {
-            cout << "on est dans le if de livre" << endl;
-            id_trouve++;
-            Lmediatheque.livres.erase(it_livre);
-            cout << "livre suppr" << endl;
-        }
-        else {
-            if (it_livre < Lmediatheque.livres.end()) {
-                cout << "on est dans le else fi de livre" << endl;
-                it_livre++;
-            }
-            else{
-                break;
-            }
-        }
-
-    }
-    cout << "coucou c'est brussy" << endl;
-    //test sur les revues
-    vector<Crevue*>::iterator it_revue = Lmediatheque.revues.begin();
-    cout << "vecteur it_revue cree" << endl;
-    while (it_revue <= Lmediatheque.revues.end() && (id_trouve == 0)) {
-        if ((*it_revue)->get_ID() == ID) {
-            id_trouve++;
-            Lmediatheque.revues.erase(it_revue);
-            //printf("supp revue\n");
-        }
-        else if (it_revue <  Lmediatheque.revues.end())
-            it_revue++;
-    }
-    //test sur les CDs
-    vector<Ccd*>::iterator it_cd = Lmediatheque.cds.begin();
-    while (it_cd <= Lmediatheque.cds.end() && (id_trouve == 0)) {
-        if ((*it_cd)->get_ID() == ID) {
-            id_trouve++;
-            Lmediatheque.cds.erase(it_cd);
-            //printf("supp cd\n");
-        }
-        else if (it_cd <  Lmediatheque.cds.end())
-            it_cd++;
-    }
-    //test sur les DVDs
-    vector<Cdvd*>::iterator it_dvd = Lmediatheque.dvds.begin();
-    while (it_dvd <= Lmediatheque.dvds.end() && (id_trouve == 0)) {
-        if ((*it_dvd)->get_ID() == ID) {
-            id_trouve++;
-            Lmediatheque.dvds.erase(it_dvd);
-            //printf("supp dvd\n");
-        }
-        else if (it_dvd <  Lmediatheque.dvds.end())
-            it_dvd++;
-    }
-    //test sur les vhs
-    vector<Cvhs*>::iterator it_vhs = Lmediatheque.vhs.begin();
-    while (it_vhs <= Lmediatheque.vhs.end() && (id_trouve == 0)) {
-        if ((*it_vhs)->get_ID() == ID) {
-            id_trouve++;
-            Lmediatheque.vhs.erase(it_vhs);
-            //printf("supp vhs\n");
-        }
-        else if (it_vhs <  Lmediatheque.vhs.end())
-            it_vhs++;
-    }
-    //test sur les ressources numériques
-    vector<Cressource_numerique*>::iterator it_rs = Lmediatheque.ressources_numeriques.begin();
-    while (it_rs <= Lmediatheque.ressources_numeriques.end() && (id_trouve == 0)) {
-        if ((*it_rs)->get_ID() == ID) {
-            id_trouve++;
-            Lmediatheque.ressources_numeriques.erase(it_rs);
-            //printf("supp ressource num\n");
-        }
-        else if (it_rs <  Lmediatheque.ressources_numeriques.end())
-            it_rs++;
-    }
-
-    if (id_trouve == 0)
-        cout << "cet identifiant n'est pas attribué" << endl;
-
 }
 

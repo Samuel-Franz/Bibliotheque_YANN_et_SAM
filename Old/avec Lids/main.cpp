@@ -75,35 +75,30 @@ int main() {
         mediatheque.livres[1]->affichage();
      */
 
-    //C:\Users\mapep\OneDrive\Documents\Class\ENSEIRB\C++\Bibliotheque\exemple_mediatheque.txt
+    //C:\Users\mapep\OneDrive\Documents\Class\ENSEIRB\C++\Bibliotheque\cmake-build-debug\exemple_mediatheque.txt
 
+    vector<int> ids;
     vector<int> ids_dispo;
+    ids_dispo.push_back(12345);
+    ids_dispo.push_back(117);
     Cmediatheque mediatheque; //initialisation de la structure de vecteurs que l'on nomme mediatheque
     int state = 1;
-    string input;
     while(state){
+
+        string input;
         cout << "Que voulez vous faire ? : \n" << endl;
-        cout << "Commandes possibles : \n" << "LOAD \n" << "BYE \n" << "SAVE \n" << "ADD\n" << endl;
+        cout << "Commandes possibles : \n" << "LOAD \n" << "BYE \n" << "SAVE" << endl;
         cin >> input;
 
         if (input == "LOAD"){
             cout << "Entrez le chemin et le nom du fichier source :" << endl;
             cin >> input;
-            LOAD(input.c_str(), mediatheque, ids_dispo);
+            LOAD(input.c_str(), mediatheque, ids, ids_dispo);
         }
         if (input == "SAVE"){
             cout << "Entrez le chemin et le nom du fichier de sauvegarde :" << endl;
             cin >> input;
             SAVE(input.c_str(), mediatheque, ids_dispo);
-        }
-        if (input == "ADD"){
-            ADD(mediatheque,ids_dispo);
-        }
-        if (input == "DELETE"){
-            cout << "ID de la ressource a effacer ? \n" << endl;
-            int id_delete;
-            cin >> id_delete;
-            DELETE(id_delete, mediatheque, ids_dispo);
         }
         if (input == "BYE"){
             state = 0;

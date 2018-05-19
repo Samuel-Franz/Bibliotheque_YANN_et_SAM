@@ -39,7 +39,7 @@ protected:
 
 public:
     //Methodes
-    Cressource(ifstream& Lfichier, string Lbuff);
+    Cressource(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Cressource(string titre,string auteur,date date_de_sortie,int ID);
     Cressource();
     ~Cressource();
@@ -53,7 +53,7 @@ public:
     int    get_ID();
     string get_locataire();
     periode get_periode_emprunt();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 };
 
@@ -66,7 +66,7 @@ protected:
     string _resume;
 
 public:
-    Clivre(ifstream& Lfichier, string Lbuff);
+    Clivre(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Clivre(string titre, string auteur, date date_de_sortie,int ID, int nbr_page, string collection, string resume);
     Clivre();
     ~Clivre();
@@ -74,7 +74,7 @@ public:
     string get_collection();
     string get_resume();
     void   affichage();
-    void from_file(ifstream& Lfichier,string Lbuff);
+    void from_file(ifstream& Lfichier,string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 };
 
@@ -87,7 +87,7 @@ protected:
     string _nom_articles;
 
 public:
-    Crevue(ifstream& Lfichier, string Lbuff);
+    Crevue(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Crevue(string titre,string auteur,date date_de_sortie,int ID,int nbr_page, string collection, string resume, string editeur, int nbr_articles, string nom_articles);
     Crevue();
     ~Crevue();
@@ -95,7 +95,7 @@ public:
     int     get_nbr_articles();
     string get_nom_articles();
     void   affichage();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 
 };
@@ -111,7 +111,7 @@ protected:
 public:
     //Methode
     Ccd();
-    Ccd(ifstream& Lfichier, string Lbuff);
+    Ccd(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Ccd(string titre,string auteur,date date_de_sortie,int ID, int duree, int nbr_pistes,
         string maison_de_production);
     ~Ccd();
@@ -119,7 +119,7 @@ public:
     int get_duree();
     string get_maison_de_producton();
     int get_nbr_pistes();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 };
 
@@ -134,13 +134,13 @@ protected:
     //Methode
 public:
     Cvhs();
-    Cvhs(ifstream& Lfichier, string Lbuff);
+    Cvhs(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Cvhs(string titre,string auteur,date date_de_sortie,int ID, int duree, string maison_de_production);
     ~Cvhs();
     void affichage();
     int get_duree();
     string get_maison_de_producton();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 
 };
@@ -157,14 +157,14 @@ protected:
 public:
     //Methode
     Cdvd();
-    Cdvd(ifstream& Lfichier, string Lbuff);
+    Cdvd(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Cdvd(string titre,string auteur,date date_de_sortie,int ID, int duree, string maison_de_production, int nbr_chapitres);
     ~Cdvd();
     void affichage();
     int get_duree();
     string get_maison_de_producton();
     int get_nbr_chapitres();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 
 };
@@ -181,14 +181,14 @@ protected:
 public:
     //Methodeh
     Cressource_numerique();
-    Cressource_numerique(ifstream& Lfichier, string Lbuff);
+    Cressource_numerique(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     Cressource_numerique(string titre,string auteur,date date_de_sortie,int ID, int taille, string chemin_acces, string format);
     ~Cressource_numerique();
     void affichage();
     int get_taille();
     string get_format();
     string get_chemin_acces();
-    void from_file(ifstream& Lfichier, string Lbuff);
+    void from_file(ifstream& Lfichier, string Lbuff, vector<int> &Lids);
     void save_to_file(const char* Lnomfichier);
 
 };
@@ -204,13 +204,11 @@ public:
     vector<Cressource_numerique*> ressources_numeriques;
 };
 
-void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
+void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids, vector<int> &Lids_dispo);
 
 void SAVE(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
-void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
-
-void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
+void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids, vector<int> &Lids_dispo);
 
 #endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H
 
