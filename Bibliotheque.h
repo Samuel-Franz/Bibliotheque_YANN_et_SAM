@@ -219,4 +219,6 @@ void SHOW (int ID, Cmediatheque &Lmediatheque);
 
 void LIST(Cmediatheque &mediatheque);
 
+void clear(Cmediatheque &Lmediatheque);
+
 #endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H

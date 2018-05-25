@@ -1117,5 +1117,11 @@ void LIST(Cmediatheque &Lmediatheque) {
 			
 }
 		
-
-
+void clear(Cmediatheque &Lmediatheque) {
+	Lmediatheque.livres.clear();
+	Lmediatheque.revues.clear();
+	Lmediatheque.cds.clear();
+	Lmediatheque.dvds.clear();
+	Lmediatheque.vhs.clear();
+	Lmediatheque.ressources_numeriques.clear();
+}

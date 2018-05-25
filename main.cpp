@@ -17,6 +17,7 @@ int main() {
     int state = 1;
     string input;
     while(state){
+		int commande_valide = 0;
         cout << "Que voulez vous faire ? : \n" << endl;
         cout << "Commandes possibles : \n" << "LOAD \n" << "BYE \n" << "SAVE \n" << "ADD\n" << "DELETE\n" << "SHOW\n" << endl;
         cin >> input;
@@ -26,11 +27,13 @@ int main() {
             cin >> input;
             LOAD(input.c_str(), mediatheque, ids_dispo);
             cout << "\n";
+			commande_valide = 1;
         }
         if (input == "SAVE"){
             cout << "Entrez le chemin et le nom du fichier de sauvegarde :" << endl;
             cin >> input;
             SAVE(input.c_str(), mediatheque, ids_dispo);
+			commande_valide = 1;
         }
         if (input == "ADD"){
             cout << "Quel type de ressource voulez vous ajouter ? : " << endl;
@@ -40,12 +43,14 @@ int main() {
                 cin >> input;
             }
             ADD(input, mediatheque,ids_dispo);
+			commande_valide = 1;
         }
         if (input == "DELETE"){
             cout << "ID de la ressource a effacer ? \n" << endl;
             int id_delete;
             cin >> id_delete;
             DELETE(id_delete, mediatheque, ids_dispo);
+			commande_valide = 1;
         }
         if (input == "SHOW"){
             cout << "Veuillez rentrer l'identifiant de la ressource à afficher :" << endl;
@@ -56,14 +61,17 @@ int main() {
                 cin >> id_show;
             }
             SHOW(id_show, mediatheque);
+			commande_valide = 1;
         }
 		if (input == "LIST") {
 			LIST(mediatheque);
+			commande_valide = 1;
 		}
         if (input == "BYE"){
             state = 0;
+			commande_valide = 1;
         }
-        else
+        if ( commande_valide == 0)
             cout << "Commande non reconnue! Verifiez la syntaxe\n" << endl;
     }
     return 0;
