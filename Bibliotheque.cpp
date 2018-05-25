@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <string.h>
 #include <vector>
+#include <iomanip>  
 using namespace std;
 
 
@@ -44,46 +45,46 @@ Cressource::~Cressource(){
 
 //METHODES
 void Cressource::affichage() {
-    cout << "Titre : " << _titre << endl;
-    cout << "Auteur : " << _auteur << endl;
-    cout << "Date De Sortie : " << _date_de_sortie.jour << "/" << _date_de_sortie.mois << "/" <<_date_de_sortie.annee << endl;
+    cout << "Titre                : " << _titre << endl;
+    cout << "Auteur               : " << _auteur << endl;
+    cout << "Date De Sortie       : " << _date_de_sortie.jour << "/" << _date_de_sortie.mois << "/" <<_date_de_sortie.annee << endl;
     switch ( _type )
     {
         case LIVRE:
-            cout << "Type : Livre" << endl;
+            cout << "Type                 : Livre" << endl;
             break;
         case REVUE:
-            cout << "Type : Revue" << endl;
+            cout << "Type                 : Revue" << endl;
             break;
         case CD:
-            cout << "Type : CD" << endl;
+            cout << "Type                 : CD" << endl;
             break;
         case VHS:
-            cout << "Type : VHS" << endl;
+            cout << "Type                 : VHS" << endl;
             break;
         case DVD:
-            cout << "Type : DVD" << endl;
+            cout << "Type                 : DVD" << endl;
             break;
         case RESSOURCE:
-            cout << "Type : RESSOURCE" << endl;
+            cout << "Type                 : RESSOURCE" << endl;
             break;
     }
-    cout << "Identifiant : " << _ID << endl;
-    cout << "Locataire : " << _locataire << endl;
+    cout << "Identifiant          : " << _ID << endl;
+    cout << "Locataire            : " << _locataire << endl;
     if (_locataire.compare("") == 0){
         cout << "Ressource disponible" << endl;
     }
     else{
-        cout << "Periode d'emprunt : " << _periode_emprunt.debut.jour << "/" << _periode_emprunt.debut.mois << "/" << _periode_emprunt.debut.annee << " - " << _periode_emprunt.fin.jour << "/" << _periode_emprunt.fin.mois << "/" << _periode_emprunt.fin.annee << endl;
+        cout << "Periode d'emprunt    : " << _periode_emprunt.debut.jour << "/" << _periode_emprunt.debut.mois << "/" << _periode_emprunt.debut.annee << " - " << _periode_emprunt.fin.jour << "/" << _periode_emprunt.fin.mois << "/" << _periode_emprunt.fin.annee << endl;
     }
 }
 
 
 void Cressource::affichage_compact() {
-	string etat_location = "Loué";
+	string etat_location = "Loue";
 	if (_locataire == "")
 		etat_location = "Disponible";
-	cout << _titre << " de " << _auteur << " " << _date_de_sortie.annee << " " << etat_location << endl;
+	cout << "Titre : " << left<< setw(30) << _titre << " Auteur :  " << left << setw(30) << _auteur << "Anne de sortie : " << _date_de_sortie.annee << "  Disponibilite : " << etat_location << endl;
 	
 }
 string Cressource::get_titre(){
@@ -215,8 +216,8 @@ Clivre::~Clivre(){
 void Clivre::affichage(){
     //cout << "entree dans affichage ressource" << endl;
     Cressource::affichage();
-    cout << "Nombre de pages : " << _nbr_pages << endl;
-    cout << "Collection : " << _collection << endl;
+    cout << "Nombre de pages      : " << _nbr_pages << endl;
+    cout << "Collection           : " << _collection << endl;
     cout << "Résumé : " << _resume << endl;
 
 }
@@ -293,9 +294,9 @@ Crevue::~Crevue(){
 
 void Crevue::affichage(){
     Cressource::affichage();
-    cout << "Editeur : " << _editeur << endl;
-    cout << "Nombre d'articles : " << _editeur << endl;
-    cout << "Titres des articles : " << _nom_articles << endl;
+    cout << "Editeur              : " << _editeur << endl;
+    cout << "Nombre d'articles    : " << _editeur << endl;
+    cout << "Titres des articles  : " << _nom_articles << endl;
 
 }
 
@@ -363,8 +364,8 @@ Ccd::~Ccd(){
 
 void Ccd::affichage() {
     Cressource::affichage();
-    cout << "Durée : " << _duree << endl;
-    cout << "Nombre de pistes : " << _nbr_pistes << endl;
+    cout << "Duree                : " << _duree << endl;
+    cout << "Nombre de pistes     : " << _nbr_pistes << endl;
     cout << "Maison de production : " << _maison_de_production << endl;
 }
 
@@ -435,7 +436,7 @@ Cvhs::~Cvhs(){
 
 void Cvhs::affichage(){
     Cressource::affichage();
-    cout << "Durée : " << _duree << endl;
+    cout << "Duree                : " << _duree << endl;
     cout << "Maison de Production : " << _maison_de_production << endl;
 }
 
@@ -499,9 +500,9 @@ Cdvd::~Cdvd(){
 
 void Cdvd::affichage(){
     Cressource::affichage();
-    cout << "Durée : " << _duree << endl;
+    cout << "Duree                : " << _duree << endl;
     cout << "Maison de Production : " << _maison_de_production << endl;
-    cout << "Nombre de Chapitres : " << _nbr_chapitres << endl;
+    cout << "Nombre de Chapitres  : " << _nbr_chapitres << endl;
 }
 
 int Cdvd::get_duree() {
@@ -568,9 +569,9 @@ Cressource_numerique::~Cressource_numerique(){
 
 void Cressource_numerique::affichage(){
     Cressource::affichage();
-    cout << "Taille : " << _taille << endl;
-    cout << "Chemin d'acces : " << _chemin_acces << endl;
-    cout << "Format : " << _format << endl;
+    cout << "Taille               : " << _taille << endl;
+    cout << "Chemin d'acces       : " << _chemin_acces << endl;
+    cout << "Format               : " << _format << endl;
 }
 
 int Cressource_numerique::get_taille(){
@@ -1092,38 +1093,29 @@ void SHOW(int ID, Cmediatheque &Lmediatheque) {
 	}
 }
 
-void SHOW_compact (int ID, Cmediatheque &Lmediatheque){
-    int status = 1;
-    while(status){
-        auto it_livre = find_if(Lmediatheque.livres.begin(), Lmediatheque.livres.end(), [&ID](Clivre* livre){return livre->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-            if(it_livre != Lmediatheque.livres.end()){
-                (*it_livre)->affichage_compact();
-                status = 0;
-        }
-        auto it_revue = find_if(Lmediatheque.revues.begin(), Lmediatheque.revues.end(), [&ID](Crevue* revue){return revue->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-        if(it_revue != Lmediatheque.revues.end()){
-            (*it_revue)->affichage_compact();
-            status = 0;
-        }
-        auto it_cd = find_if(Lmediatheque.cds.begin(), Lmediatheque.cds.end(), [&ID](Ccd* cd){return cd->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-        if(it_cd != Lmediatheque.cds.end()){
-            (*it_cd)->affichage_compact();
-            status = 0;
-        }
-        auto it_dvd = find_if(Lmediatheque.dvds.begin(), Lmediatheque.dvds.end(), [&ID](Cdvd* dvd){return dvd->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-        if(it_dvd != Lmediatheque.dvds.end()){
-            (*it_dvd)->affichage_compact();
-            status = 0;
-        }
-        auto it_vhs = find_if(Lmediatheque.vhs.begin(), Lmediatheque.vhs.end(), [&ID](Cvhs* vhs){return vhs->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-        if(it_vhs != Lmediatheque.vhs.end()){
-            (*it_vhs)->affichage_compact();
-            status = 0;
-        }
-        auto it_ressource_num = find_if(Lmediatheque.ressources_numeriques.begin(), Lmediatheque.ressources_numeriques.end(), [&ID](Cressource_numerique* ressource_num){return ressource_num->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
-        if(it_ressource_num != Lmediatheque.ressources_numeriques.end()){
-            (*it_ressource_num)->affichage_compact();
-            status = 0;
-        }
-    }
+
+void LIST(Cmediatheque &Lmediatheque) {
+
+	for (vector<Clivre*>::iterator it = Lmediatheque.livres.begin(); it != Lmediatheque.livres.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+	for (vector<Crevue*>::iterator it = Lmediatheque.revues.begin(); it != Lmediatheque.revues.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+	for (vector<Ccd*>::iterator it = Lmediatheque.cds.begin(); it != Lmediatheque.cds.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+	for (vector<Cdvd*>::iterator it = Lmediatheque.dvds.begin(); it != Lmediatheque.dvds.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+	for (vector<Cvhs*>::iterator it = Lmediatheque.vhs.begin(); it != Lmediatheque.vhs.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+	for (vector<Cressource_numerique*>::iterator it = Lmediatheque.ressources_numeriques.begin(); it != Lmediatheque.ressources_numeriques.end(); ++it) {
+		(*it)->affichage_compact();
+	}
+			
 }
+		
+
+

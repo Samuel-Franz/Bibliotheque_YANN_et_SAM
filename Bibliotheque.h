@@ -217,6 +217,6 @@ void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void SHOW (int ID, Cmediatheque &Lmediatheque);
 
-void SHOW_compact(int ID, Cmediatheque &Lmediatheque);
+void LIST(Cmediatheque &mediatheque);
 
 #endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H

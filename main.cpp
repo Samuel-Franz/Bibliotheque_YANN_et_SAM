@@ -57,6 +57,9 @@ int main() {
             }
             SHOW(id_show, mediatheque);
         }
+		if (input == "LIST") {
+			LIST(mediatheque);
+		}
         if (input == "BYE"){
             state = 0;
         }
