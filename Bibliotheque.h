@@ -46,6 +46,7 @@ public:
     void   emprunt(string locataire, periode periode_emprunt);
     void   remise();
     void   affichage();
+	void   affichage_compact();
     string get_titre();
     string get_auteur();
     date get_date_de_sortie();
@@ -215,5 +216,7 @@ void ADD(string Ltype, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void SHOW (int ID, Cmediatheque &Lmediatheque);
+
+void SHOW_compact(int ID, Cmediatheque &Lmediatheque);
 
 #endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H

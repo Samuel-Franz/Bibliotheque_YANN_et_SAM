@@ -78,6 +78,14 @@ void Cressource::affichage() {
     }
 }
 
+
+void Cressource::affichage_compact() {
+	string etat_location = "Loué";
+	if (_locataire == "")
+		etat_location = "Disponible";
+	cout << _titre << " de " << _auteur << " " << _date_de_sortie.annee << " " << etat_location << endl;
+	
+}
 string Cressource::get_titre(){
     return _titre;
 }
@@ -1048,37 +1056,73 @@ void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo) {
 
 }
 
-void SHOW (int ID, Cmediatheque &Lmediatheque){
+void SHOW(int ID, Cmediatheque &Lmediatheque) {
+	int status = 1;
+	while (status) {
+		auto it_livre = find_if(Lmediatheque.livres.begin(), Lmediatheque.livres.end(), [&ID](Clivre* livre) {return livre->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_livre != Lmediatheque.livres.end()) {
+			(*it_livre)->affichage();
+			status = 0;
+		}
+		auto it_revue = find_if(Lmediatheque.revues.begin(), Lmediatheque.revues.end(), [&ID](Crevue* revue) {return revue->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_revue != Lmediatheque.revues.end()) {
+			(*it_revue)->affichage();
+			status = 0;
+		}
+		auto it_cd = find_if(Lmediatheque.cds.begin(), Lmediatheque.cds.end(), [&ID](Ccd* cd) {return cd->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_cd != Lmediatheque.cds.end()) {
+			(*it_cd)->affichage();
+			status = 0;
+		}
+		auto it_dvd = find_if(Lmediatheque.dvds.begin(), Lmediatheque.dvds.end(), [&ID](Cdvd* dvd) {return dvd->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_dvd != Lmediatheque.dvds.end()) {
+			(*it_dvd)->affichage();
+			status = 0;
+		}
+		auto it_vhs = find_if(Lmediatheque.vhs.begin(), Lmediatheque.vhs.end(), [&ID](Cvhs* vhs) {return vhs->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_vhs != Lmediatheque.vhs.end()) {
+			(*it_vhs)->affichage();
+			status = 0;
+		}
+		auto it_ressource_num = find_if(Lmediatheque.ressources_numeriques.begin(), Lmediatheque.ressources_numeriques.end(), [&ID](Cressource_numerique* ressource_num) {return ressource_num->get_ID() == ID; }); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
+		if (it_ressource_num != Lmediatheque.ressources_numeriques.end()) {
+			(*it_ressource_num)->affichage();
+			status = 0;
+		}
+	}
+}
+
+void SHOW_compact (int ID, Cmediatheque &Lmediatheque){
     int status = 1;
     while(status){
         auto it_livre = find_if(Lmediatheque.livres.begin(), Lmediatheque.livres.end(), [&ID](Clivre* livre){return livre->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
             if(it_livre != Lmediatheque.livres.end()){
-                (*it_livre)->affichage();
+                (*it_livre)->affichage_compact();
                 status = 0;
         }
         auto it_revue = find_if(Lmediatheque.revues.begin(), Lmediatheque.revues.end(), [&ID](Crevue* revue){return revue->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
         if(it_revue != Lmediatheque.revues.end()){
-            (*it_revue)->affichage();
+            (*it_revue)->affichage_compact();
             status = 0;
         }
         auto it_cd = find_if(Lmediatheque.cds.begin(), Lmediatheque.cds.end(), [&ID](Ccd* cd){return cd->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
         if(it_cd != Lmediatheque.cds.end()){
-            (*it_cd)->affichage();
+            (*it_cd)->affichage_compact();
             status = 0;
         }
         auto it_dvd = find_if(Lmediatheque.dvds.begin(), Lmediatheque.dvds.end(), [&ID](Cdvd* dvd){return dvd->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
         if(it_dvd != Lmediatheque.dvds.end()){
-            (*it_dvd)->affichage();
+            (*it_dvd)->affichage_compact();
             status = 0;
         }
         auto it_vhs = find_if(Lmediatheque.vhs.begin(), Lmediatheque.vhs.end(), [&ID](Cvhs* vhs){return vhs->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
         if(it_vhs != Lmediatheque.vhs.end()){
-            (*it_vhs)->affichage();
+            (*it_vhs)->affichage_compact();
             status = 0;
         }
         auto it_ressource_num = find_if(Lmediatheque.ressources_numeriques.begin(), Lmediatheque.ressources_numeriques.end(), [&ID](Cressource_numerique* ressource_num){return ressource_num->get_ID() == ID;}); // itérateur qui prend son type automatiquement déduit de ceux utilisés dans le find_if.
         if(it_ressource_num != Lmediatheque.ressources_numeriques.end()){
-            (*it_ressource_num)->affichage();
+            (*it_ressource_num)->affichage_compact();
             status = 0;
         }
     }
