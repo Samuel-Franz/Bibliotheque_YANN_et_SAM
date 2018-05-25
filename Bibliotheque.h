@@ -193,6 +193,7 @@ public:
 
 };
 
+// AUTRES FONCTIONS
 
 class Cmediatheque{
 public:
@@ -204,13 +205,15 @@ public:
     vector<Cressource_numerique*> ressources_numeriques;
 };
 
+
 void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void SAVE(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
-void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
+void ADD(string Ltype, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
-#endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H
+void SHOW (int ID, Cmediatheque &Lmediatheque);
 
+#endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H
