@@ -1,0 +1,241 @@
+LIVRE
+Berserk
+Kentaro Miura
+31
+10
+1989
+1
+Samuel Franz
+10
+5
+2018
+10
+5
+2050
+10000
+Hakusensha
+Dans un monde medieval et fantastique, erre un guerrier solitaire nomme Guts, decide  d etre seul maitre de son destin. Autrefois contraint par un pari perdu a rejoindre les Faucons, une troupe de mercenaires diriges par Griffith, Guts fut acteur de nombreux combats sanglants et temoin de sombres intrigues politiques. Mais il realisa soudain que la fatalite n'existe pas et qu'il pouvait reprendre sa liberte s'il le desirait vraiment..
+
+LIVRE
+Fermeture Eclair
+Carl Aderhold
+8
+10
+2014
+2
+Charle Mercier
+20
+4
+2018
+10
+5
+2018
+200
+Livre de poche
+Nous ne soupçonnons pas les ressources qui gisent en nous. Laurent n’avait rien d’un meneur. Il aura fallu un licenciement violent et le depart de sa femme pour voir cet ouvrier d’une usine de pots catalytiques prendre les armes. Le voici a la tête d’une bande d...
+
+LIVRE
+Le pere Goriot
+Honore de Balzac
+23
+9
+1835
+3
+Charle Mercier
+20
+4
+2018
+10
+5
+2018
+200
+Livre de poche
+La maison Vauquer est une pension parisienne où se côtoient des residents que tout oppose, et pourtant inexorablement lies : Rastignac, un jeune etudiant en droit, le Pere Goriot, un ancien fabriquant de vermicelles, ou encore le mysterieux Vautrin. Tous ont leurs secrets et leurs faiblesses : Rastignac, obsede par la haute societe, delaisse ses etudes pour tenter de s’y faire integrer ; Vautrin cache un passe douloureux ; le Pere Goriot s’est ruine pour ses filles ingrates. La maison Vauquer s’apparente alors a une peinture de cette epoque, un cliche de personnages aussi differents qu’unis, criants de verite, acteurs d’une comedie humaine.
+
+REVUE
+L'intelligence artificielle
+01net
+29
+04
+2018
+4
+Yann Divet
+1
+5
+2018
+10
+5
+2018
+40
+Kiosque01
+Qu'elle est la place de l'intelligence artificielle dans la societe aujourd'hui?
+Editeur01net
+6
+article1, article2, article 3, article 4, article 5, article 6
+
+REVUE
+Philosohie
+Les penseurs
+21
+11
+2017
+5
+Samuel Franz
+3
+7
+2018
+10
+8
+2018
+39
+Philo et Cie
+Philosopher n'est il qu'un moyen habile de feindre l'intelligence?
+EditeurPhi
+3
+article1, article2, article 3
+
+CD
+The Razors Edge
+ACDC
+1
+1
+1990
+6
+
+0
+0
+0
+0
+0
+0
+47
+12
+Atco Records
+
+CD
+Feng Suave EP
+Feng Suave
+2
+1
+2018
+7
+
+0
+0
+0
+0
+0
+0
+17
+4
+Suave Records
+
+VHS
+Shrek
+Auteur de shrek
+2
+7
+2001
+8
+
+0
+0
+0
+0
+0
+0
+120
+ShrekProd
+
+DVD
+Un Dvd
+Un auteur de DVD
+6
+7
+1970
+9
+MR Dupont
+5
+3
+2016
+4
+3
+2017
+120
+maison de prod du dvd
+5
+
+DVD
+Le Grand Bleu
+Luc Besson
+11
+5
+1988
+10
+MR Dupont
+5
+3
+2016
+4
+3
+2017
+120
+Patrice Ledoux
+7
+
+RESSOURCE_NUMERIQUE
+Table Logarithmique
+MathWorks
+1
+12
+1985
+11
+
+0
+0
+0
+0
+0
+0
+20
+chemin d'acces du fichier
+txt
+
+RESSOURCE_NUMERIQUE
+Ghost of Onyx
+Eric Nylund
+1
+1
+2016
+12
+Samuel Franz
+4
+2
+2017
+2
+3
+2019
+100
+chemin d'acces du livre numerique
+epub
+
+LIVRE
+Le Livre
+Jose Arthur
+1
+2
+1789
+13
+Samuel Franz
+10
+5
+2018
+10
+5
+2000
+5000
+Revolution
+Un livre vraiment bien
+
+ID_DISPO
+14
