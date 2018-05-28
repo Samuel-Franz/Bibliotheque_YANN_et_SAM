@@ -46,6 +46,7 @@ public:
     void   emprunt(string locataire, periode periode_emprunt);
     void   remise();
     void   affichage();
+	void   affichage_compact();
     string get_titre();
     string get_auteur();
     date get_date_de_sortie();
@@ -193,6 +194,7 @@ public:
 
 };
 
+// AUTRES FONCTIONS
 
 class Cmediatheque{
 public:
@@ -204,13 +206,19 @@ public:
     vector<Cressource_numerique*> ressources_numeriques;
 };
 
+
 void LOAD(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void SAVE(const char* Lnomfichier, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
-void ADD(Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
+void ADD(string Ltype, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
 void DELETE(int ID, Cmediatheque &Lmediatheque, vector<int> &Lids_dispo);
 
-#endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H
+void SHOW (int ID, Cmediatheque &Lmediatheque);
 
+void LIST(Cmediatheque &mediatheque);
+
+void clear(Cmediatheque &Lmediatheque);
+
+#endif //BIBLIOTHEQUE_BIBLIOTHEQUE_H
